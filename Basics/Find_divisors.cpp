@@ -12,23 +12,31 @@ using namespace std;
 
 void solve()
 {
-   int n;
+   ll n;
    cin>>n;
-   cout<<n;
+   vector<ll> v;
+   for(ll i=1;i*i<=n;i++)
+   {
+   	if(n%i==0)
+   	{
+   	  v.pb(i);
+   	  if((n/i)!=i)
+   	  {
+   	  	v.pb(n/i);
+   	  }
+   	}
+   }
+   for(auto divi:v)
+   {
+   	cout<<divi<<" ";
+   }cout<<'\n';
 }
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-
-
-	int t;
-	cin>>t;
-	while(t--)
-	{
-		solve();
-	}
-	return 0;
+	solve();
+	
 
 }
 
