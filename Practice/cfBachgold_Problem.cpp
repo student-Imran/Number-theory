@@ -8,31 +8,32 @@ using namespace std;
 #define ll long long int
 #define all(v) (v).begin(),(v).end()
 #define set_bits __builtin_popcountll  
-ll divi(ll k)
-{
-	int count=0;
-   for(ll i=1;i*i<=k;i++)
-   {
-   	if(k%i==0)
-   	{
-   	  count++;
-   	  if((k/i)!=i)
-   	  {
-   	  	count++;
-   	  }
-   	}
-   }
-   return count;
-}
+
 
 void solve()
 {
    int n;
    cin>>n;
-   ll  a[n];
-   for(int i=0;i<n;i++)cin>>a[i];
-    cout<<divi(ans)<<'\n';
+   int two=2;
+   int three=3;
+   if(n%2==0)
+   {
+   	cout<<n/2<<'\n';
+    for(int i=1;i<=n/2;i++)
+    {
+    	cout<<two<<" ";
+    }cout<<'\n';
 
+   }
+   else
+   {
+      cout<<n/2<<'\n';
+      for(int i=1;i<n/2;i++)
+      {
+      	cout<<two<<" ";
+      }cout<<three<<'\n';
+
+   }
 }
 int main()
 {
@@ -43,8 +44,7 @@ int main()
 	/*int t;
 	cin>>t;
 	while(t--)
-	*/
-	{
+	*/{
 		solve();
 	}
 	return 0;
