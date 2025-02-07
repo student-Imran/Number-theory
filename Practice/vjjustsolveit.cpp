@@ -9,7 +9,7 @@ using namespace std;
 #define all(v) (v).begin(),(v).end()
 #define set_bits __builtin_popcountll  
 const int N=1e6;
-int fre[N];
+int fre[N+1];
 void solve()
 {
    int n;
