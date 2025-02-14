@@ -9,25 +9,28 @@ using namespace std;
 #define all(v) (v).begin(),(v).end()
 #define set_bits __builtin_popcountll  
 
-
+int te;
 void solve()
 {
-   ll n,m,l,r;
-   cin>>n>>m>>l>>r;
-   ll k=(n*m)/__gcd(n,m);
- if (k > r) {
-        cout << 0 << '\n';
-        
-    }
-
-   
-    ll first = (l + k - 1) / k * k; 
-    ll last = (r / k) * k; 
-    if (first > last) {
-        cout << 0 << '\n';
-    } else {
-        cout << (last - first) / k + 1 << '\n';
-    }
+   int n,x;
+te++;
+   cin>>n>>x;
+   int i;
+   cout<<"Case "<<te<<": ";
+   ll pre=0;
+   ll d;
+   ll re;
+   for(i=1;i>0;i++)
+   {
+   	 d=pre*10+x;
+   	 re=d%n;
+   	if(re==0)
+   	{
+   		break;
+   	}
+   	pre=d%n;
+   	
+   }cout<<i<<'\n';
 }
 int main()
 {
@@ -35,13 +38,14 @@ int main()
 	cin.tie(NULL);
 
 
-	/*int t;
+	int t;
 	cin>>t;
 	while(t--)
-	*/{
+	{
 		solve();
 	}
 	return 0;
 
 }
+
 
