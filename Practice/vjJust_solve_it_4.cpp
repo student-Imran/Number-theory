@@ -1,47 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-#define ff first
-#define ss second
-#define pb push_back
-#define ll long long int
-#define all(v) (v).begin(),(v).end()
-#define set_bits __builtin_popcountll  
+#define ll long long
 
 
-void solve()
-{
-   ll n,m,l,r;
-   cin>>n>>m>>l>>r;
-   ll k=(n*m)/__gcd(n,m);
- if (k > r) {
+
+void solve() {
+    ll n, m, l, r;
+    cin >> n >> m >> l >> r;
+
+    ll g = __gcd(n, m);
+    ll k = (n / g) * m;  
+    
+    
+    if (k < n || k < m) {  
         cout << 0 << '\n';
-        
+        return;
     }
 
-   
-    ll first = (l + k - 1) / k * k; 
-    ll last = (r / k) * k; 
-    if (first > last) {
+    if (k > r) {
         cout << 0 << '\n';
-    } else {
-        cout << (last - first) / k + 1 << '\n';
+        return;
     }
-}
-int main()
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
 
-
-	/*int t;
-	cin>>t;
-	while(t--)
-	*/{
-		solve();
-	}
-	return 0;
-
+    ll ans = (r / k) - ((l - 1) / k);
+    cout << max(ans, 0LL) << '\n';  
 }
 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    solve();
+    return 0;
+}
